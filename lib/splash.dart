@@ -30,19 +30,9 @@ class SplashPage extends StatelessWidget {
                   Hero(
                     tag: 'logo',
                     child: Image.asset(
-                      "assets/images/tq_logo_round.png",
+                      "assets/images/logo.png",
                       height: 170,
                       width: 170,
-                    ),
-                  ),
-                  SizedBox(height: 20),
-                  Text(
-                    'StockPilot',
-                    style: TextStyle(
-                      fontSize: 26,
-                      fontWeight: FontWeight.w700,
-                      color: Colors.black,
-                      letterSpacing: 2.5,
                     ),
                   ),
                   SizedBox(height: 20),

@@ -77,7 +77,7 @@ class RootBloc extends Bloc<RootEvent, RootState> {
         final auth = (event as LogInUserEvent).auth;
         final user = (event as LogInUserEvent).user;
         SharedPreferences prefs = await SharedPreferences.getInstance();
-        await prefs.setString('email', auth['user']);
+        await prefs.setString('email', auth['email']);
         await prefs.setString('password', auth['password']);
         yield state.clone(
           loginState: LoginState.LOGIN,

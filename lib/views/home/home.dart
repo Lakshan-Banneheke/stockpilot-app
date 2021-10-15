@@ -1,8 +1,8 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
-import 'package:webview_flutter/webview_flutter.dart';
-
+import 'package:stockpilot_app/views/root/root_bloc.dart';
+import 'package:stockpilot_app/views/root/root_event.dart';
+import 'package:stockpilot_app/widgets/button_icon.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -10,19 +10,25 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  Completer<WebViewController> _controller = Completer<WebViewController>();
 
   @override
   Widget build(BuildContext context) {
+    final rootBloc = BlocProvider.of<RootBloc>(context);
+
     return SafeArea(
         child: Scaffold(
-          body: WebView(
-            initialUrl: 'https://stockpilot.netlify.app/',
-            javascriptMode: JavascriptMode.unrestricted,
-            onWebViewCreated: (WebViewController controller) {
-              _controller.complete(controller);
-            },
-          ),
+          body: Container(
+            child: Column(
+              children: [
+                ButtonIcon(
+                  text: 'Log Out',
+                  onTap: () {
+                    rootBloc.add(LogOutEvent());
+                  },
+                ),
+              ],
+            ),
+          )
         )
     );
   }

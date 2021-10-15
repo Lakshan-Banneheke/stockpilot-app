@@ -37,7 +37,7 @@ class LoginUserBloc extends Bloc<LoginUserEvent, LoginUserState> {
         final user =
             await User.getFromAPI(authDetails['email'], authDetails['password']);
         print(user.token);
-        if (user != null) {
+        if (user.token != null) {
           rootBloc.add(LogInUserEvent(authDetails, user));
         } else {
           yield state.clone(loading: false, loginFailed: true);

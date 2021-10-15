@@ -11,17 +11,28 @@ class WebPage extends StatefulWidget {
 
 class _WebPageState extends State<WebPage> {
   Completer<WebViewController> _controller = Completer<WebViewController>();
-
+  bool isLoading=true;
   @override
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
-          body: WebView(
-            initialUrl: 'https://stockpilot.netlify.app/',
-            javascriptMode: JavascriptMode.unrestricted,
-            onWebViewCreated: (WebViewController controller) {
-              _controller.complete(controller);
-            },
+          body: Stack(
+            children: [
+              WebView(
+                initialUrl: 'https://stockpilot.netlify.app/',
+                javascriptMode: JavascriptMode.unrestricted,
+                onWebViewCreated: (WebViewController controller) {
+                  _controller.complete(controller);
+                },
+                onPageFinished: (finish) {
+                  setState(() {
+                    isLoading = false;
+                  });
+                },
+              ),
+              isLoading ? Center( child: CircularProgressIndicator(),)
+                  : Stack()
+            ],
           ),
         )
     );

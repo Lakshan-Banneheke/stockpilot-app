@@ -64,7 +64,7 @@ class UserLoginPage extends StatelessWidget {
                           firstCurve: Curves.ease,
                           secondCurve: Curves.ease,
                           firstChild: ButtonIcon(
-                            text: 'User Log In',
+                            text: 'Log In',
                             onTap: () {
                               if (_formKey.currentState.validate()) {
                                 _formKey.currentState.save();

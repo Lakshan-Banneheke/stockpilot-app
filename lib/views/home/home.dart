@@ -1,7 +1,9 @@
 import 'package:badges/badges.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:stockpilot_app/constants.dart';
+import 'package:stockpilot_app/services/local_notification_service.dart';
 import 'package:stockpilot_app/views/navigation/navHome.dart';
 import 'package:stockpilot_app/views/web/webPage.dart';
 
@@ -19,6 +21,37 @@ class _HomeState extends State<Home> {
     WebPage(),
     NavHome()
   ];
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+
+    LocalNotificationService.initialize(context);
+
+    ///gives you the message on which user taps
+    ///and it opened the app from terminated state
+    FirebaseMessaging.instance.getInitialMessage().then((message) {
+      if(message != null){
+      }
+    });
+
+    ///forground work
+    FirebaseMessaging.onMessage.listen((message) {
+      if(message.notification != null){
+        // print(message.notification.body);
+        // print(message.notification.title);
+        print(message.data['data']);
+      }
+
+      LocalNotificationService.display(message);
+    });
+
+    ///When the app is in background but opened and user taps
+    ///on the notification
+    FirebaseMessaging.onMessageOpenedApp.listen((message) {
+    });
+  }
 
   @override
   Widget build(BuildContext context) {

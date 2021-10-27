@@ -20,7 +20,7 @@ class RootState {
   static RootState get initialState => RootState(
         error: '',
         user: null,
-        loginState: LoginState.CHECKING,
+        loginState: LoginState.LOGIN,
         checkStarted: false,
       );
 
@@ -33,7 +33,7 @@ class RootState {
     return RootState(
       error: error ?? this.error,
       user: user ?? this.user,
-      loginState: loginState ?? this.loginState,
+      loginState: LoginState.LOGIN,
       checkStarted: checkStarted ?? this.checkStarted,
     );
   }

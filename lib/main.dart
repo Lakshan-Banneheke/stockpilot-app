@@ -4,14 +4,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:stockpilot_app/views/home/home.dart';
 import 'package:stockpilot_app/views/root/root_bloc.dart';
-import 'package:stockpilot_app/views/test/home.dart';
-
 
 
 ///Receive message when app is in background solution for on message
 Future<void> backgroundHandler(RemoteMessage message) async{
-  print(message.data.toString());
-  print(message.notification.title);
+  print("BBBBBBBBBBBBBBBBBBBBBB");
+  // print(message.data.toString());
+  // print(message.notification.title);
 }
 
 void main() async{

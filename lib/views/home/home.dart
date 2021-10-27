@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:stockpilot_app/constants.dart';
 import 'package:stockpilot_app/services/local_notification_service.dart';
-import 'package:stockpilot_app/views/navigation/navHome.dart';
+import 'package:stockpilot_app/views/notification/notifHome.dart';
 import 'package:stockpilot_app/views/web/webPage.dart';
 
 
@@ -19,12 +19,11 @@ class _HomeState extends State<Home> {
   int _currentIndex = 0;
   final List _children = [
     WebPage(),
-    NavHome()
+    NotifHome()
   ];
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
 
     LocalNotificationService.initialize(context);
@@ -32,16 +31,16 @@ class _HomeState extends State<Home> {
     ///gives you the message on which user taps
     ///and it opened the app from terminated state
     FirebaseMessaging.instance.getInitialMessage().then((message) {
-      if(message != null){
-      }
+
     });
 
     ///forground work
     FirebaseMessaging.onMessage.listen((message) {
       if(message.notification != null){
+        print("AAAAAAAAAAAAAAAAAAAAAAA");
         // print(message.notification.body);
         // print(message.notification.title);
-        print(message.data['data']);
+        // print(message.data['data']);
       }
 
       LocalNotificationService.display(message);

@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:stockpilot_app/views/login/bloc/login_user_provider.dart';
-import 'package:stockpilot_app/views/navigation/navigation.dart';
+import 'package:stockpilot_app/views/notification/bloc/notification_provider.dart';
+import 'package:stockpilot_app/views/notification/notif.dart';
 import 'package:stockpilot_app/views/root/root_bloc.dart';
 import 'package:stockpilot_app/views/root/root_state.dart';
 import 'package:stockpilot_app/widgets/loader.dart';
 
-class NavHome extends StatelessWidget {
+class NotifHome extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +21,7 @@ class NavHome extends StatelessWidget {
             if (state.loginState == LoginState.LOGOUT) {
               return LoginUserProvider();
             } else if (state.loginState == LoginState.LOGIN) {
-              return Navigation();
+              return NotificationProvider();
             } else {
               return LoginUserProvider();
             }

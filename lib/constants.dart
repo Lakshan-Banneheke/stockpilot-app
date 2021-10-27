@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 abstract class Constants{
   static final String baseURL = "http://stockpilot-backend-716829868.us-east-2.elb.amazonaws.com/";
   static final String loginUrl = baseURL + "user/login";
+  static final String notifUrl = baseURL + "notifications/listen_nots/open_price";
 
   //Colours
   static final Color kHintText = Color(0xFF8E8E8E);

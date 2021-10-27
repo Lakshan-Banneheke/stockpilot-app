@@ -1,0 +1,155 @@
+{
+  "project_info": {
+    "project_number": "3954695841",
+    "project_id": "stockpilot-notifications",
+    "storage_bucket": "stockpilot-notifications.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:3954695841:android:3f15a9589e11f4a79edae0",
+        "android_client_info": {
+          "package_name": "com.easyapproach.push_notification"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "3954695841-5ovqrs0jqkuf2g7h044d057i3srh815l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAB-M8XXAbCzZIWZmcE90XMwGzlCn_abME"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "3954695841-5ovqrs0jqkuf2g7h044d057i3srh815l.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:3954695841:android:55d00152b483ba299edae0",
+        "android_client_info": {
+          "package_name": "com.example.notify"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "3954695841-5ovqrs0jqkuf2g7h044d057i3srh815l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAB-M8XXAbCzZIWZmcE90XMwGzlCn_abME"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "3954695841-5ovqrs0jqkuf2g7h044d057i3srh815l.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:3954695841:android:01c4f0a62aeb3c749edae0",
+        "android_client_info": {
+          "package_name": "com.example.stockpilot_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "3954695841-5ovqrs0jqkuf2g7h044d057i3srh815l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAB-M8XXAbCzZIWZmcE90XMwGzlCn_abME"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "3954695841-5ovqrs0jqkuf2g7h044d057i3srh815l.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:3954695841:android:df6dddb3224f339f9edae0",
+        "android_client_info": {
+          "package_name": "com.example.stockpilotnotifications"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "3954695841-5ovqrs0jqkuf2g7h044d057i3srh815l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAB-M8XXAbCzZIWZmcE90XMwGzlCn_abME"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "3954695841-5ovqrs0jqkuf2g7h044d057i3srh815l.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:3954695841:android:40566ea27c534a959edae0",
+        "android_client_info": {
+          "package_name": "com.example.stockpilotnotify"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "3954695841-5ovqrs0jqkuf2g7h044d057i3srh815l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAB-M8XXAbCzZIWZmcE90XMwGzlCn_abME"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "3954695841-5ovqrs0jqkuf2g7h044d057i3srh815l.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -32,6 +32,7 @@ class LoginView extends StatelessWidget {
           listenWhen: (pre, current) => pre.loginState != current.loginState,
           listener: (context, state) {
             if (state.loginState == LoginState.LOGIN)
+              //TODO CHECK THIS
               Navigator.pushReplacementNamed(context, '/web');
           },
         ),

@@ -5,6 +5,8 @@ import 'package:stockpilot_app/views/root/root_event.dart';
 import 'package:stockpilot_app/widgets/button_icon.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import 'bloc/notification_bloc.dart';
+
 class Notif extends StatefulWidget {
   @override
   _NotifState createState() => _NotifState();
@@ -23,6 +25,8 @@ class _NotifState extends State<Notif> {
   @override
   Widget build(BuildContext context) {
     final rootBloc = BlocProvider.of<RootBloc>(context);
+    final notifBloc = BlocProvider.of<NotificationBloc>(context);
+    print(notifBloc.state.notifications);
 
     return  Container(
         child: Column(

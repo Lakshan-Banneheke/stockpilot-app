@@ -1,8 +1,6 @@
-import 'package:badges/badges.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:stockpilot_app/constants.dart';
 import 'package:stockpilot_app/services/local_notification_service.dart';
 import 'package:stockpilot_app/views/notification/notifHome.dart';
 import 'package:stockpilot_app/views/web/webPage.dart';
@@ -81,12 +79,7 @@ class _HomeState extends State<Home> {
             BottomNavigationBarItem(
               // icon: Icon(FontAwesomeIcons.solidBell),
               // icon: NotifIcon(),
-              icon: Badge(
-                showBadge: notifCounter == 0 ? false : true,
-                badgeColor : Constants.kSecondary,
-                badgeContent: Text('$notifCounter'),
-                child: Icon(FontAwesomeIcons.solidBell),
-              ),
+              icon: Icon(FontAwesomeIcons.solidBell),
               label: 'Notifications',
             ),
 

@@ -14,3 +14,7 @@ class AddNotificationEvent extends NotificationEvent {
 
   AddNotificationEvent(this.notif);
 }
+
+class GetHistNotifsEvent extends NotificationEvent{
+  GetHistNotifsEvent();
+}

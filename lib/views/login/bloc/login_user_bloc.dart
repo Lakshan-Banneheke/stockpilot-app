@@ -42,6 +42,10 @@ class LoginUserBloc extends Bloc<LoginUserEvent, LoginUserState> {
 
         if (user.token != null) {
           String deviceToken = (await FirebaseMessaging.instance.getToken());
+          print("device");
+          print(deviceToken);
+          print(user);
+          print(user.token);
           Dio dio = Dio();
           dio.options.headers["x-access-token"] = user.token;
           try {
@@ -49,6 +53,8 @@ class LoginUserBloc extends Bloc<LoginUserEvent, LoginUserState> {
               Constants.notifUrl,
               data: {"device_token" : deviceToken},
             );
+            print("NOTIF LISTEN");
+            print(response);
 
           } on DioError catch (e) {
             print(e.toString());

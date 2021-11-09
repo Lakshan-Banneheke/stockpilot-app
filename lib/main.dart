@@ -3,7 +3,6 @@ import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:stockpilot_app/views/home/home.dart';
-import 'package:stockpilot_app/views/notification/bloc/notification_bloc.dart';
 import 'package:stockpilot_app/views/root/root_bloc.dart';
 
 
@@ -33,6 +32,7 @@ class StockPilotApp extends StatelessWidget {
           ),
         ],
       child : MaterialApp(
+          debugShowCheckedModeBanner: false,
         themeMode: ThemeMode.light,
         initialRoute: '/',
         routes: {

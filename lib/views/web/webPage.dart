@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:stockpilot_app/widgets/loader.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 
@@ -29,7 +30,7 @@ class _WebPageState extends State<WebPage> {
               });
             },
           ),
-          isLoading ? Center( child: CircularProgressIndicator(),)
+          isLoading ? Loader()
               : Stack()
         ],
       ),

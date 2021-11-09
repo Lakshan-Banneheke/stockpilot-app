@@ -21,7 +21,6 @@ class User{
         data: {"creds" : {"email": email, "password": password}},
       );
       final data = response.data;
-      final token = data['token'];
       return User(
         email,
         password,

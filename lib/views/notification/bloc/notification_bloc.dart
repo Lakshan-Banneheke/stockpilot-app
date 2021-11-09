@@ -2,12 +2,18 @@ import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:stockpilot_app/models/hist_notification.dart';
+import 'package:stockpilot_app/views/root/root_bloc.dart';
 
 import 'notification_event.dart';
 import 'notification_state.dart';
 
 class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
-  NotificationBloc(BuildContext context) : super(NotificationState.initialState);
+  final RootBloc rootBloc;
+
+  NotificationBloc(BuildContext context) : this.rootBloc = BlocProvider.of<RootBloc>(context),
+        super(NotificationState.initialState);
 
   @override
   Stream<NotificationState> mapEventToState(NotificationEvent event) async* {
@@ -22,6 +28,11 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
         List tempNotifs = [...state.notifications, notif];
         yield state.clone(notifications: tempNotifs);
         break;
+      case GetHistNotifsEvent:
+        yield state.clone(loading: true);
+        String token = rootBloc.state.user.token;
+        List<HistNotification> histNotifs = await HistNotification.getFromAPI(token);
+        yield state.clone(histNotifs: histNotifs, loading: false);
     }
   }
 

@@ -31,9 +31,9 @@ class LoginView extends StatelessWidget {
         BlocListener<RootBloc, RootState>(
           listenWhen: (pre, current) => pre.loginState != current.loginState,
           listener: (context, state) {
-            if (state.loginState == LoginState.LOGIN)
+            // if (state.loginState == LoginState.LOGIN)
               //TODO CHECK THIS
-              Navigator.pushReplacementNamed(context, '/web');
+              // Navigator.pushReplacementNamed(context, '/web');
           },
         ),
       ],

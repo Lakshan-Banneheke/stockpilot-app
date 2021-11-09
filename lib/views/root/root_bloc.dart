@@ -22,7 +22,7 @@ class RootBloc extends Bloc<RootEvent, RootState> {
     String password = (prefs.getString('password') ?? '');
     if (email.isNotEmpty) print('Saved User $email');
     if (email.isNotEmpty && password.isNotEmpty) {
-      final user = await User.getFromAPI(email, password);
+      final user = await User.getFromAPI(email: email, password: password);
       if (user != null) {
         add(UpdateUserEvent(user));
         print('Logged In ${user.email}');

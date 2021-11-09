@@ -16,14 +16,15 @@ class HistNotification{
     @required this.body
   });
 
-  static Future<List<HistNotification>> getFromAPI(String token) async {
-    Dio dio = Dio();
+  static Future<List<HistNotification>> getFromAPI({String token, Dio dio_}) async {
+    Dio dio = dio_ ?? Dio();
     var response;
-    dio.options.headers["x-access-token"] = token;
-    print("GET FROM API");
+    // dio.options.headers["x-access-token"] = token;
+    print('Notification get from API called');
     try {
-      response = await dio.get(Constants.notifHistUrl);
-      List list = await response.data["last 5 days notifications"];
+      //TODO header method changed for test. Check if this actually works after backend deployment
+      response = await dio.get(Constants.notifHistUrl, options: Options(headers: {"x-access-token" : token}));
+      List list = response.data["last 5 days notifications"];
       List<HistNotification> notifList = [];
       list.forEach((notif) {
         var datetime = DateTime.fromMillisecondsSinceEpoch(notif[0]);

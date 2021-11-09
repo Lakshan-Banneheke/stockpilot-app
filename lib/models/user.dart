@@ -13,8 +13,10 @@ class User{
       this.token
   );
 
-  static Future<User> getFromAPI(String email, String password) async {
-    Dio dio = Dio();
+  static Future<User> getFromAPI({String email, String password, Dio dio_}) async {
+    Dio dio = dio_ ?? Dio();
+    print('User get from API called');
+
     try {
       Response response = await dio.post(
         Constants.loginUrl,

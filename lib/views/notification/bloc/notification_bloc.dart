@@ -31,7 +31,7 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
       case GetHistNotifsEvent:
         yield state.clone(loading: true);
         String token = rootBloc.state.user.token;
-        List<HistNotification> histNotifs = await HistNotification.getFromAPI(token);
+        List<HistNotification> histNotifs = await HistNotification.getFromAPI(token: token);
         yield state.clone(histNotifs: histNotifs, loading: false);
     }
   }

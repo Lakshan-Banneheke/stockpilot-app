@@ -38,7 +38,7 @@ class LoginUserBloc extends Bloc<LoginUserEvent, LoginUserState> {
 
         final authDetails = (event as LoginEvent).auth;
         print('Email: ${authDetails['email']}');
-        final user = await User.getFromAPI(authDetails['email'], authDetails['password']);
+        final user = await User.getFromAPI(email: authDetails['email'], password: authDetails['password']);
 
         if (user.token != null) {
           String deviceToken = (await FirebaseMessaging.instance.getToken());
